@@ -92,21 +92,20 @@ describe('実用的な使用例', () => {
         confirmPassword: 'SecurePass123'
       };
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const result = await Do(registrationData)
         .chain((data: UserRegistrationData) => validateUsername(data.username).map(username => ({ ...data, username })))
         .chain((data: any) => validateEmail(data.email).map(email => ({ ...data, email })))
         .chain((data: any) => validatePassword(data.password).map(password => ({ ...data, password })))
         .chain((data: any) => validatePasswordConfirmation(data.password, data.confirmPassword).map(() => data))
-        .chainAsync(async data => {
+        .chainAsync(async (data: any) => {
           const usernameResult = await checkUsernameAvailability(data.username);
           return isOk(usernameResult) ? ok(data) : usernameResult;
         })
-        .chainAsync(async data => {
+        .chainAsync(async (data: any) => {
           const emailResult = await checkEmailAvailability(data.email);
           return isOk(emailResult) ? ok(data) : emailResult;
         })
-        .chainAsync(async data => {
+        .chainAsync(async (data: any) => {
           const hashResult = await hashPassword(data.password);
           return isOk(hashResult) ? ok({
             username: data.username,
@@ -134,7 +133,7 @@ describe('実用的な使用例', () => {
       };
 
       const result = await Do(registrationData)
-        .chain(data => validateUsername(data.username).map(username => ({ ...data, username })))
+        .chain((data: any) => validateUsername(data.username).map(username => ({ ...data, username })))
         .run();
 
       expect(isErr(result)).toBe(true);
@@ -152,11 +151,11 @@ describe('実用的な使用例', () => {
       };
 
       const result = await Do(registrationData)
-        .chain(data => validateUsername(data.username).map(username => ({ ...data, username })))
-        .chain(data => validateEmail(data.email).map(email => ({ ...data, email })))
-        .chain(data => validatePassword(data.password).map(password => ({ ...data, password })))
-        .chain(data => validatePasswordConfirmation(data.password, data.confirmPassword).map(() => data))
-        .chainAsync(async data => {
+        .chain((data: any) => validateUsername(data.username).map(username => ({ ...data, username })))
+        .chain((data: any) => validateEmail(data.email).map(email => ({ ...data, email })))
+        .chain((data: any) => validatePassword(data.password).map(password => ({ ...data, password })))
+        .chain((data: any) => validatePasswordConfirmation(data.password, data.confirmPassword).map(() => data))
+        .chainAsync(async (data: any) => {
           const usernameResult = await checkUsernameAvailability(data.username);
           return isOk(usernameResult) ? ok(data) : usernameResult;
         })
@@ -232,11 +231,11 @@ describe('実用的な使用例', () => {
       const result = await Do(fileMetadata)
         .chain(validateFileSize)
         .chain(validateFileType)
-        .chainAsync(async metadata => {
+        .chainAsync(async (metadata: any) => {
           const contentResult = await readFileContent(metadata);
           return isOk(contentResult) ? ok({ ...metadata, content: contentResult.data }) : contentResult;
         })
-        .chainAsync(async data => {
+        .chainAsync(async (data: any) => {
           const checksumResult = await calculateChecksum(data.content);
           return isOk(checksumResult) ? ok({ ...data, checksum: checksumResult.data }) : checksumResult;
         })
@@ -278,7 +277,7 @@ describe('実用的な使用例', () => {
       const result = await Do(corruptedFile)
         .chain(validateFileSize)
         .chain(validateFileType)
-        .chainAsync(async metadata => {
+        .chainAsync(async (metadata: any) => {
           const contentResult = await readFileContent(metadata);
           return isOk(contentResult) ? ok({ ...metadata, content: contentResult.data }) : contentResult;
         })
@@ -359,7 +358,7 @@ describe('実用的な使用例', () => {
 
       const result = await Do(config)
         .chain(validateApiConfig)
-        .chainAsync(validConfig =>
+        .chainAsync((validConfig: any) =>
           makeApiRequest<{ message: string }>(validConfig, '/users')
         )
         .chain(parseApiResponse)
@@ -397,7 +396,7 @@ describe('実用的な使用例', () => {
 
       const result = await Do(config)
         .chain(validateApiConfig)
-        .chainAsync(validConfig =>
+        .chainAsync((validConfig: any) =>
           makeApiRequest(validConfig, '/error-endpoint')
         )
         .run();
@@ -421,7 +420,6 @@ describe('実用的な使用例', () => {
       id: number;
       timestamp: Date;
       value: number;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       metadata: Record<string, any>;
     }
 
@@ -445,7 +443,6 @@ describe('実用的な使用例', () => {
       return ok(parsed);
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const parseMetadata = (metadata: string): Result<Record<string, any>, string> => {
       try {
         const parsed = JSON.parse(metadata);
@@ -467,10 +464,10 @@ describe('実用的な使用例', () => {
       };
 
       const result = await Do(rawData)
-        .chain(data => parseId(data.id).map(id => ({ ...data, parsedId: id })))
-        .chain(data => parseTimestamp(data.timestamp).map(timestamp => ({ ...data, parsedTimestamp: timestamp })))
-        .chain(data => parseValue(data.value).map(value => ({ ...data, parsedValue: value })))
-        .chain(data => parseMetadata(data.metadata).map(metadata => ({
+        .chain((data: any) => parseId(data.id).map(id => ({ ...data, parsedId: id })))
+        .chain((data: any) => parseTimestamp(data.timestamp).map(timestamp => ({ ...data, parsedTimestamp: timestamp })))
+        .chain((data: any) => parseValue(data.value).map(value => ({ ...data, parsedValue: value })))
+        .chain((data: any) => parseMetadata(data.metadata).map(metadata => ({
           id: data.parsedId,
           timestamp: data.parsedTimestamp,
           value: data.parsedValue,
@@ -498,10 +495,10 @@ describe('実用的な使用例', () => {
       };
 
       const result = await Do(rawData)
-        .chain(data => parseId(data.id).map(id => ({ ...data, parsedId: id })))
-        .chain(data => parseTimestamp(data.timestamp).map(timestamp => ({ ...data, parsedTimestamp: timestamp })))
-        .chain(data => parseValue(data.value).map(value => ({ ...data, parsedValue: value })))
-        .chain(data => parseMetadata(data.metadata).map(metadata => ({
+        .chain((data: any) => parseId(data.id).map(id => ({ ...data, parsedId: id })))
+        .chain((data: any) => parseTimestamp(data.timestamp).map(timestamp => ({ ...data, parsedTimestamp: timestamp })))
+        .chain((data: any) => parseValue(data.value).map(value => ({ ...data, parsedValue: value })))
+        .chain((data: any) => parseMetadata(data.metadata).map(metadata => ({
           id: data.parsedId,
           timestamp: data.parsedTimestamp,
           value: data.parsedValue,
