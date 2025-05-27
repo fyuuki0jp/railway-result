@@ -1,6 +1,6 @@
 {
   "name": "@fyuuki0jp/railway-result",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "TypeScript Result type implementation for Railway Oriented Programming",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
     "functional-programming",
     "error-handling"
   ],
-  "author": "Your Name",
+  "author": "fyuuki0jp",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.0",
@@ -32,10 +32,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/railway-result.git"
+    "url": "git+https://github.com/fyuuki0jp/railway-result.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/railway-result/issues"
+    "url": "https://github.com/fyuuki0jp/railway-result/issues"
   },
-  "homepage": "https://github.com/your-org/railway-result#readme"
+  "homepage": "https://github.com/fyuuki0jp/railway-result#readme",
+  "access": "public"
 }
