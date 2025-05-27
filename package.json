@@ -32,10 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/railway-result.git"
+    "url": "git+https://github.com/fyuuki0jp/railway-result.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/railway-result/issues"
+    "url": "https://github.com/fyuuki0jp/railway-result/issues"
   },
-  "homepage": "https://github.com/your-org/railway-result#readme"
+  "homepage": "https://github.com/fyuuki0jp/railway-result#readme"
 }

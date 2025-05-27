@@ -43,13 +43,13 @@ npm run test:coverage
 ## インストール
 
 ```bash
-npm install @your-org/railway-result
+npm install @fyuuki0jp/railway-result
 ```
 
 ## 基本的な使用方法
 
 ```typescript
-import { Result, ok, err, isOk, isErr } from '@your-org/railway-result';
+import { Result, ok, err, isOk, isErr } from '@fyuuki0jp/railway-result';
 
 // 成功の場合
 const success: Result<string, Error> = ok("Hello, World!");
@@ -70,7 +70,7 @@ if (isErr(failure)) {
 ## Do記法を使用したチェーン処理
 
 ```typescript
-import { Do, zodToResult } from '@your-org/railway-result';
+import { Do, zodToResult } from '@fyuuki0jp/railway-result';
 import { z } from 'zod';
 
 const UserSchema = z.object({
