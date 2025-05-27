@@ -21,7 +21,7 @@
     "functional-programming",
     "error-handling"
   ],
-  "author": "Your Name",
+  "author": "fyuuki0jp",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.0",
