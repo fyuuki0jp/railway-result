@@ -37,5 +37,6 @@
   "bugs": {
     "url": "https://github.com/fyuuki0jp/railway-result/issues"
   },
-  "homepage": "https://github.com/fyuuki0jp/railway-result#readme"
+  "homepage": "https://github.com/fyuuki0jp/railway-result#readme",
+  "access": "public"
 }
