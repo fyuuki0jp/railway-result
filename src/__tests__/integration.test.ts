@@ -19,7 +19,7 @@ import {
   mapAsyncPromiseResult,
   zodToResult,
   type Result 
-} from '../index';
+} from '../index.js';
 
 describe('統合テスト', () => {
   describe('複合的なデータ処理パイプライン', () => {

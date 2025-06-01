@@ -2,9 +2,9 @@
  * Utility functions for working with Result types
  */
 
-import type { Result } from './types';
-import { ok, err } from './result';
-import { isOk } from './guards';
+import type { Result } from './types.js';
+import { ok, err } from './result.js';
+import { isOk } from './guards.js';
 
 /**
  * Converts a Promise<T> to Promise<Result<T, E>>

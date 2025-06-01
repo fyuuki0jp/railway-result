@@ -6,7 +6,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { ok, err, isOk, isErr, type Result } from '../index';
+import { ok, err, isOk, isErr, type Result } from '../index.js';
 
 describe('Result基本機能', () => {
   describe('ok関数 - 成功結果の作成', () => {

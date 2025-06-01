@@ -9,7 +9,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { zodToResult, isOk, isErr } from '../index';
+import { zodToResult, isOk, isErr } from '../index.js';
 
 describe('Zod統合ヘルパー', () => {
   describe('zodToResult関数 - Zod結果のResult型変換', () => {

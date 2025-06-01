@@ -2,8 +2,8 @@
  * Helper functions for integrating with Zod validation library
  */
 
-import type { Result } from './types';
-import { ok, err } from './result';
+import type { Result } from './types.js';
+import { ok, err } from './result.js';
 
 /**
  * Helper function to convert Zod SafeParseReturnType to Result

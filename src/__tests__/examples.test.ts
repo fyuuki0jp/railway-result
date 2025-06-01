@@ -15,7 +15,7 @@ import {
   isErr,
   Do,
   type Result
-} from '../index';
+} from '../index.js';
 
 describe('実用的な使用例', () => {
   describe('ユーザー登録システム', () => {
