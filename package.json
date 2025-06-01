@@ -1,6 +1,6 @@
 {
   "name": "@fyuuki0jp/railway-result",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript Result type implementation for Railway Oriented Programming",
   "type": "module",
   "main": "dist/index.js",
