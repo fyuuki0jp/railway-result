@@ -2,7 +2,7 @@
  * Type guard functions for Result types
  */
 
-import type { Result, Success, Failure } from './types';
+import type { Result, Success, Failure } from './types.js';
 
 /**
  * Type guard to check if a Result is a Success

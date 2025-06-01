@@ -2,8 +2,15 @@
   "name": "@fyuuki0jp/railway-result",
   "version": "0.1.0",
   "description": "TypeScript Result type implementation for Railway Oriented Programming",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],

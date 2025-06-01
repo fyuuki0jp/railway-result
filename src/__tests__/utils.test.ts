@@ -16,7 +16,7 @@ import {
   mapPromiseResult, 
   mapAsyncPromiseResult,
   type Result 
-} from '../index';
+} from '../index.js';
 
 describe('ユーティリティ関数', () => {
   describe('fromPromise関数 - PromiseからResultへの変換', () => {

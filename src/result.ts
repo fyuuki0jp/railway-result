@@ -2,7 +2,7 @@
  * Result creation functions and implementations
  */
 
-import type { Result, Success, Failure } from './types';
+import type { Result, Success, Failure } from './types.js';
 
 /**
  * Creates a success result with chainable methods

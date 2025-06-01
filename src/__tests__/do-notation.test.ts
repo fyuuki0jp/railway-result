@@ -6,7 +6,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { ok, err, isOk, isErr, Do, type Result } from '../index';
+import { ok, err, isOk, isErr, Do, type Result } from '../index.js';
 
 describe('Do記法とResultChain', () => {
   describe('Do関数 - 初期化', () => {

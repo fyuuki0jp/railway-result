@@ -2,9 +2,9 @@
  * Do notation implementation for Result types
  */
 
-import type { Result } from './types';
-import { ok, err } from './result';
-import { isOk } from './guards';
+import type { Result } from './types.js';
+import { ok, err } from './result.js';
+import { isOk } from './guards.js';
 
 /**
  * Result型のDo記法風の実装
