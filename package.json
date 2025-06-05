@@ -45,5 +45,8 @@
     "url": "https://github.com/fyuuki0jp/railway-result/issues"
   },
   "homepage": "https://github.com/fyuuki0jp/railway-result#readme",
-  "access": "public"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
