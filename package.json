@@ -1,5 +1,5 @@
 {
-  "name": "@fyuuki0jp/railway-result",
+  "name": "railway-result",
   "version": "0.2.0",
   "description": "TypeScript Result type implementation for Railway Oriented Programming",
   "type": "module",

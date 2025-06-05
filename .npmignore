@@ -1,0 +1,43 @@
+# Source files
+src/
+*.ts
+!dist/**/*.d.ts
+
+# Test files
+__tests__/
+*.test.*
+*.spec.*
+vitest.config.*
+
+# Development files
+.claude/
+.github/
+.git/
+.gitignore
+.npmrc
+
+# Build files
+tsconfig.json
+node_modules/
+package-lock.json
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+coverage/
+.nyc_output/
